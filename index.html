@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/SignUp</title>
+    <style>
+        /* Form container */
+        .form-container {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form title */
+        .form-title {
+            margin-top: 0;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Form label */
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Form input */
+        .form-input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Form button */
+        .form-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-button:hover {
+            background-color: #3e8e41;
+        }
+
+        /* Form link */
+        .form-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .form-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <form id="login-form">
+            <h2 class="form-title">Login</h2>
+            <label class="form-label" for="login-email">Email:</label>
+            <input type="email" class="form-input" id="login-email" name="email" required>
+            <label class="form-label" for="login-password">Password:</label>
+            <input type="password" class="form-input" id="login-password" name="password" required>
+            <button type="submit" class="form-button">Login</button>
+            <a href="#" class="form-link" id="signup-link">Don't have an account? Signup here.</a>
+        </form>
+
+        <form id="signup-form">
+            <h2 class="form-title">Signup</h2>
+            <label class="form-label" for="signup-name">Name:</label>
+            <input type="text" class="form-input" id="signup-name" name="name" required>
+            <label class="form-label" for="signup-email">Email:</label>
+            <input type="email" class="form-input" id="signup-email" name="email" required>
+            <label class="form-label" for="signup-password">Password:</label>
+            <input type="password" class="form-input" id="signup-password" name="password" required>
+            <button type="submit" class="form-button">Signup</button>
+            <a href="#">
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Hide the signup form by default
+        $('#signup-form').hide();
+
+        // Switch to the login form when clicking on the "Don't have an account? Signup here" link
+        $('#signup-link').click(function (e) {
+            e.preventDefault();
+            $('#login-form').hide();
+            $('#signup-form').show();
+        });
+
+        // Switch to the signup form when clicking on the "Already have an account? Login here" link
+        $('#login-link').click(function (e) {
+            e.preventDefault();
+            $('#signup-form').hide();
+            $('#login-form').show();
+        });
+
+        // Process the login form when it's submitted
+        $('#login-form').submit(function (e) {
+            e.preventDefault();
+            var email = $('#login-email').val();
+            var password = $('#login-password').val();
+
+            // Send the form data to your server for processing
+            // ...
+
+            // If the login is successful, redirect the user to their dashboard
+            // ...
+        });
+
+        // Process the signup form when it's submitted
+        $('#signup-form').submit(function (e) {
+            e.preventDefault();
+            var name = $('#signup-name').val();
+            var email = $('#signup-email').val();
+            var password = $('#signup-password').val();
+
+            // Send the form data to your server for processing
+            // ...
+
+            // If the signup is successful, redirect the user to their dashboard
+            // ...
+        });
+    });
+</script>
+
+</html>
